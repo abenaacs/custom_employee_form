@@ -1,0 +1,21 @@
+<record id="view_employee_form_inherit" model="ir.ui.view">
+    <field name="name">hr.employee.form.inherit</field>
+    <field name="model">hr.employee</field>
+    <field name="inherit_id" ref="hr.view_employee_form"/>
+    <field name="arch" type="xml">
+        <!-- Add a new page -->
+        <xpath expr="//notebook" position="inside">
+            <page string="Registration Documents">
+                <group name="registration_documents">
+                    <field name="work_experience_document"/>
+                    <field name="id_document"/>
+                </group>
+            </page>
+        </xpath>
+
+        <!-- Hide unnecessary fields -->
+        <xpath expr="//field[@name='work_phone']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+    </field>
+</record>
